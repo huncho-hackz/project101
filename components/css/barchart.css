@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;900&display=swap');
+
+*{
+    --sm-padding: .75rem;
+    --md-padding: 1rem;
+    --bg-padding: 2rem;
+    --shadow: 70px;
+    --shadow-color: #0000002b;
+    --short-radius: 5px;
+    --round-radius: 5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bar-box {
+    border-radius: var(--short-radius);
+    box-shadow: 0 0 var(--shadow) var(--shadow-color);
+    width: 600px;
+    /* min-height: 400px; */
+    height: max-content
+}
+
+.bar-box .top{
+    padding: var(--md-padding);
+    border-bottom: 1px solid var(--shadow-color);
+    font-size: 110%;
+    font-weight: 400;
+}
+
+.top h3{
+    font-size: 110%;
+    font-weight: 400;
+}
+
+.bar-box .bottom {
+    padding: var(--md-padding);
+}
+
+.price-stat > span{
+    font-size: 185%;
+    font-weight: 700;
+    letter-spacing: .5px;
+
+    position: relative;
+}
+
+.price-stat > span::after {
+    background: #393134;
+    border-radius: var(--round-radius);
+    content: attr(per);
+    color: #fff;
+    font-size: 45%;
+    font-weight: 400;
+    letter-spacing: .5px;
+    padding: .125rem .75rem;
+    position: absolute;
+    top: 0;
+    left: 110px;
+}
+
+@media (max-width: 700px) {
+    .bar-box {
+        width: 80vw;
+    }
+}

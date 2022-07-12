@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ecommerce App</title>
+    
+        <link rel = 'stylesheet' href = 'css/general.css'>
+        <link rel = 'stylesheet' href = 'css/barchart.css'>
+
+    <body>
+        <div class = 'wrapper flex flex-center'>
+            <div class = 'bar-box'>
+                <div class = 'top'>
+                    <h3>Customer Activity</h3>
+                </div>
+                <div class = 'bottom'>
+                    <div class = 'price-stat'>
+                        <span class = 'price' per = '50%'>
+                            <span>$</span>
+                            <span>100.5</span>
+                        </span>
+                    </div>
+
+                    <div class = 'graph'>
+                        <div class="overflow-hidden">
+                            <div class="py-3 px-5 bg-gray-50">Bar chart</div>
+                            <canvas class="p-10" id="chartBar"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- Required chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Chart bar -->
+    <script>
+    const labelsBarChart = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+    ];
+    const dataBarChart = {
+        labels: labelsBarChart,
+        datasets: [
+        {
+            label: "My First dataset",
+            backgroundColor: "hsl(252, 82.9%, 67.8%)",
+            borderColor: "hsl(252, 82.9%, 67.8%)",
+            data: [0, 10, 5, 2, 20, 30, 45],
+        },
+        ],
+    };
+
+    const configBarChart = {
+        type: "bar",
+        data: dataBarChart,
+        options: {},
+    };
+
+    var chartBar = new Chart(
+        document.getElementById("chartBar"),
+        configBarChart
+    );
+    </script>
+</html>
